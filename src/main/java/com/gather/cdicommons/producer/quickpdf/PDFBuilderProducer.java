@@ -1,6 +1,6 @@
 package com.gather.cdicommons.producer.quickpdf;
 
-import com.gather.pdfcommons.quickpdf.PDFBuilder;
+import com.gather.pdfcommons.quickpdf.QuickPDFBuilder;
 import com.gather.pdfcommons.quickpdf.writer.DocumentWriter;
 import com.gather.pdfcommons.quickpdf.writer.IElementWriter;
 import com.gather.pdfcommons.quickpdf.writer.PDFContentByteWriter;
@@ -25,11 +25,11 @@ import java.util.List;
 @RequestScoped
 public class PDFBuilderProducer implements Serializable {
     @Produces
-    public PDFBuilder createPDFBuilder(InjectionPoint injectionPoint) {
+    public QuickPDFBuilder createPDFBuilder(InjectionPoint injectionPoint) {
         List<IElementWriter> elementWriterList = new ArrayList<>();
         elementWriterList.add(new PDFContentByteWriter());
         elementWriterList.add(new DocumentWriter());
 
-        return new PDFBuilder(elementWriterList);
+        return new QuickPDFBuilder(elementWriterList);
     }
 }
