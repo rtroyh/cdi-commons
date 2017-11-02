@@ -1,14 +1,13 @@
 package com.gather.cdicommons.producer.quickpdf;
 
+import com.gather.cdicommons.stereotype.NamedRequestScoped;
 import com.gather.pdfcommons.quickpdf.QuickPDFBuilder;
 import com.gather.pdfcommons.quickpdf.writer.DocumentWriter;
 import com.gather.pdfcommons.quickpdf.writer.IElementWriter;
 import com.gather.pdfcommons.quickpdf.writer.PDFContentByteWriter;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +20,7 @@ import java.util.List;
  * Time: 18:57
  */
 
-@Named
-@RequestScoped
+@NamedRequestScoped
 public class PDFBuilderProducer implements Serializable {
     @Produces
     public QuickPDFBuilder createPDFBuilder(InjectionPoint injectionPoint) {

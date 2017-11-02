@@ -1,5 +1,6 @@
 package com.gather.cdicommons.producer.quickdashboard;
 
+import com.gather.cdicommons.stereotype.NamedRequestScoped;
 import com.gather.quickdashboard.core.component.DefaultComponentFactory;
 import com.gather.quickdashboard.core.component.IComponentFactory;
 import com.gather.quickdashboard.core.component.IComponentTypeResolver;
@@ -7,11 +8,9 @@ import com.gather.quickdashboard.core.dataset.IDatasetProcessorFactory;
 import com.gather.quickdashboard.core.datasource.IDataSourceFactory;
 import com.gather.quickdashboard.core.event.IClickResolver;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.io.Serializable;
 
 /**
@@ -21,8 +20,7 @@ import java.io.Serializable;
  * Date: 09-03-16
  * Time: 13:24
  */
-@Named
-@RequestScoped
+@NamedRequestScoped
 public class ComponentFactoryProducer implements Serializable {
     @Inject
     private IClickResolver clickResolver;

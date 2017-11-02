@@ -1,11 +1,10 @@
 package com.gather.cdicommons.producer.quickdashboard;
 
+import com.gather.cdicommons.stereotype.NamedRequestScoped;
 import com.gather.quickdashboard.core.dataset.*;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +17,7 @@ import java.util.List;
  * Time: 13:16
  */
 
-@Named
-@RequestScoped
+@NamedRequestScoped
 public class DatasetProcessorFactoryProducer implements Serializable {
 
     @Produces

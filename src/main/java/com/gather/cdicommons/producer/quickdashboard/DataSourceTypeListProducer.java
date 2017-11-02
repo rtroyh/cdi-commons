@@ -1,11 +1,10 @@
 package com.gather.cdicommons.producer.quickdashboard;
 
+import com.gather.cdicommons.stereotype.NamedRequestScoped;
 import com.gather.quickdashboard.core.datasource.DataSourceType;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +16,7 @@ import java.util.List;
  * Date: 09-03-16
  * Time: 11:34
  */
-@Named
-@RequestScoped
+@NamedRequestScoped
 public class DataSourceTypeListProducer implements Serializable {
 
     @Produces

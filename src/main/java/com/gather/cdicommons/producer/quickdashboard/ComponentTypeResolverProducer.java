@@ -1,13 +1,12 @@
 package com.gather.cdicommons.producer.quickdashboard;
 
+import com.gather.cdicommons.stereotype.NamedRequestScoped;
 import com.gather.quickdashboard.core.component.ComponentType;
 import com.gather.quickdashboard.core.component.DefaultComponentTypeResolver;
 import com.gather.quickdashboard.core.component.IComponentTypeResolver;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
-import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +18,7 @@ import java.util.List;
  * Date: 09-03-16
  * Time: 13:05
  */
-@Named
-@RequestScoped
+@NamedRequestScoped
 public class ComponentTypeResolverProducer implements Serializable {
 
     @Produces
