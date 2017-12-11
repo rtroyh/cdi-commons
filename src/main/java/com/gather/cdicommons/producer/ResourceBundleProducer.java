@@ -15,16 +15,15 @@ import java.lang.annotation.Annotation;
  */
 public class ResourceBundleProducer {
     @Produces
-    @ResourceBundle
+    @ResourceBundleConfig
     public java.util.ResourceBundle getBundle(InjectionPoint ctx) {
-        final java.util.ResourceBundle resourceBundle = Faces.evaluateExpressionGet("#{" + extractValue(ctx) + "}");
-        return resourceBundle;
+        return Faces.evaluateExpressionGet("#{" + extractValue(ctx) + "}");
     }
 
     private String extractValue(InjectionPoint ip) {
         for (Annotation annotation : ip.getQualifiers()) {
-            if (annotation.annotationType().equals(ResourceBundle.class)) {
-                return ((ResourceBundle) annotation).value();
+            if (annotation.annotationType().equals(ResourceBundleConfig.class)) {
+                return ((ResourceBundleConfig) annotation).value();
             }
         }
 

@@ -20,7 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
 @Documented
-public @interface ResourceBundle {
+public @interface ResourceBundleConfig {
     @Nonbinding
     String value() default "";
 }
