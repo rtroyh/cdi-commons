@@ -53,13 +53,6 @@
         </dependency>
         <dependency>
             <groupId>com.gather</groupId>
-            <artifactId>quickdashboard</artifactId>
-            <version>3.0</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.gather</groupId>
             <artifactId>pdfcommons</artifactId>
             <version>5.5.5</version>
             <scope>compile</scope>
